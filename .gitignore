@@ -75,7 +75,7 @@ node_modules/
 .env
 
 # Project
-build/
+dist/
 config/
 .cache-loader/
 cypress/videos/

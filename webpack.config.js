@@ -4,12 +4,14 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-const deps = require("./package.json").dependencies;
+const ENV = process.env.NODE_ENV || 'development';
 
 module.exports = (_, argv) => ({
   entry: './src/index',
 
   cache: false,
+
+  mode: ENV,
 
   output: {
     publicPath: process.env.APP_PROFILE_URL,
@@ -20,7 +22,7 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
-    // hot: true,
+    hot: true,
     port: process.env.APP_PROFILE_PORT,
     historyApiFallback: true,
   },
@@ -50,13 +52,13 @@ module.exports = (_, argv) => ({
               "@babel/preset-env",
               "@babel/preset-react"
             ],
-            // env: {
-            //   development: {
-            //     plugins: [
-            //       'react-refresh/babel',
-            //     ],
-            //   },
-            // },
+            env: {
+              development: {
+                plugins: [
+                  'react-refresh/babel',
+                ],
+              },
+            },
           },
         },
       },
@@ -64,9 +66,9 @@ module.exports = (_, argv) => ({
   },
 
   plugins: [
-    // (argv.mode === 'development') && new ReactRefreshWebpackPlugin({
-    //   exclude: [/node_modules/],
-    // }),
+    (ENV === 'development') && new ReactRefreshWebpackPlugin({
+      exclude: [/node_modules/],
+    }),
     new ModuleFederationPlugin({
       name: "profile",
       filename: "remoteEntry.js",
@@ -76,6 +78,7 @@ module.exports = (_, argv) => ({
       },
       exposes: {
         './ProfilePage': './src/views/ProfilePage',
+        './components': './src/components',
       },
       shared: {
         react: {
