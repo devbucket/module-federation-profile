@@ -12,6 +12,7 @@ export const ProfileHeader = memo(
           </Col>
           <Col>
             <h1>This is the expert's name</h1>
+            <h3>Something</h3>
             <p>
               <strong>The expert's affiliation line</strong>
             </p>
