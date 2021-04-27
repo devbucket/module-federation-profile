@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
-import { Container, Row, Col, Image, Button } from 'react-bootstrap'
-import { ProfileImage } from '../ProfileImage'
+import {
+  Container, Row, Col, Button,
+} from 'react-bootstrap';
+import { ProfileImage } from '../ProfileImage';
 
 export const ProfileHeader = memo(
   function ProfileHeader() {
@@ -11,10 +13,10 @@ export const ProfileHeader = memo(
             <ProfileImage />
           </Col>
           <Col>
-            <h1>This is the expert's name</h1>
+            <h1>{'This is the expert\'s name'}</h1>
             <h3>Something</h3>
             <p>
-              <strong>The expert's affiliation line</strong>
+              <strong>{'The expert\'s affiliation line'}</strong>
             </p>
           </Col>
           <Col xs={3}>

@@ -1,6 +1,6 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import React from 'react'
-import { render } from 'react-dom'
-import { App } from 'shell/App'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import { render } from 'react-dom';
+import { App } from 'shell/App';
 
-render(<App />, document.getElementById('app'))
+render(<App />, document.getElementById('app'));

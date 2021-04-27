@@ -1,2 +1,2 @@
-export { ProfileCard } from './ProfileCard'
-export { ProfileImage } from './ProfileImage'
+export { ProfileCard } from './ProfileCard';
+export { ProfileImage } from './ProfileImage';

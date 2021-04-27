@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Image } from 'react-bootstrap'
+import { Image } from 'react-bootstrap';
 
 export const ProfileImage = memo(
   function ProfileImage() {
