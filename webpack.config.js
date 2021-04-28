@@ -83,6 +83,7 @@ module.exports = {
       exposes: {
         './ProfilePage': './src/views/ProfilePage',
         './components': './src/components',
+        './reducers': './src/reducers',
       },
       shared: {
         react: {
